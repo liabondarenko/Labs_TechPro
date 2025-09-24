@@ -1,0 +1,53 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Month number</h3>
+   <h2><p id="mon"></p></h2>
+    <h1><p id="res"></p></h1>
+    <script>
+const months = new Map([
+  ["January", 1],
+  ["February", 2],
+  ["March", 3],
+  ["April", 4],
+  ["May", 5],
+  ["June", 6],
+  ["July", 7],
+  ["August", 8],
+  ["September", 9],
+  ["October", 10],
+  ["November", 11],
+  ["December", 12]
+]);
+
+const res=document.getElementById("res");
+const mon=document.getElementById("mon");
+
+let found=false;
+let name=prompt("Enter your month").trim();
+
+if (name===null||name.trim()===""){
+    res.innerText=("U entered wrong type of data");
+}
+else{
+   mon.innerText=("U wrote " + name); 
+for(let [key,values] of months ){
+if(key.toLowerCase()===name.toLowerCase()){
+    found=true;
+    res.innerText=("Month number is:" + values);
+}
+}
+if(!found){
+   res.innerText=("Ur data is not a month.")
+}
+}
+</script>
+
+</body>
+</html>
+
