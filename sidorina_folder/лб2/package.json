@@ -1,0 +1,10 @@
+{
+  "name": "лб2ТП",
+  "version": "1.0.0",
+  "description": "",
+  "main": "завдання1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}
