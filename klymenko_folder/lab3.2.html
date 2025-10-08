@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .rickrollLOl {
+    background-image: url("rick-roll.png");
+    background-repeat: no-repeat;
+    background-size: cover;              
+    background-position: center;  
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+p {
+    font-size: 24px;
+    color: black;
+    font-style: normal;
+    text-align: left;
+    text-transform: uppercase;
+}
+h1 {
+font-size: 80px;
+    color: black;
+    font-style: normal;
+    text-align: left;
+    text-transform: uppercase;
+}
+    </style>
+</head>
+<body>
+    <p id="arr1"></p>
+    <p id="arrNeg"></p>
+    <p id="SUM"></p>
+    <h1 >OOPS<br> U GOT<br>RICKROLLED</h1>
+    <div class="rickrollLOl"></div>
+    <script>
+    const N=12;
+    let arr1=document.getElementById("arr1")
+    arr1.innerText="Array 1 elements:   ";
+    let arrNeg=document.getElementById("arrNeg");
+    arrNeg.innerText="There is no negative elements on ur array";
+    let SUM=document.getElementById("SUM");
+    SUM.innerText="Sum of elements of ur array is:  ";
+    
+    let haveNeg=false;
+    let sum=Number(0);
+        let mainArray= [];
+        for (let i=0;i<N;i++) {
+            mainArray[i]=Number((Math.random()*20*N-10*N).toFixed(0));
+             sum+=mainArray[i];
+              if(mainArray[i]<0)haveNeg=true;
+        }
+        arr1.innerText+=mainArray.join(", ");
+        if(haveNeg){
+        let negArray=[];
+          arrNeg.innerText="Negative elements of array: ";
+         
+        for(let i=0;i<N;i++){
+            
+            if(mainArray[i]<0) negArray.push(mainArray[i]);
+              
+        };
+    arrNeg.innerText+=negArray.join(", ")
+    }
+     SUM.innerText+=String(sum);
+         
+
+
+    </script>
+</body>
+</html>
