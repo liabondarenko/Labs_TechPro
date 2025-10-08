@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    
+  <h3  style="text-align: center; font-size: 32px">Calculate factorial</h3>
+  <input   type="number" id="fNum"  placeholder="Enter number which u want to make factorial of" onkeydown="return event.key !== 'e' && event.key !== 'E' && event.key !== '+' && event.key !== '-' && event.key !== '.'"style="font-size: 28px; width: 65%; padding: 10px; border-radius: 8px;">
+
+  <button onclick="Factorial()"style="text-align: center; font-size: 28px;width: 33%; padding: 10px 20px; border-radius: 8px;">Calculate</button>
+  <h3  id="res" style="text-align: center; font-size: 28px; padding: 10px 20px; border-radius: 8px;"></h3>
+  <script>
+    function helpFactorial(n){
+if(n<0) return "Factorial of negative numbers does not exist!";
+if(n===0||n===1) return 1;
+let res=1;
+for (let i=2;i<=n;i++){
+    res *=i;
+}
+return res;
+ }
+function Factorial(){
+    let fNum=document.getElementById("fNum");
+    let num=parseInt(fNum.value);
+    
+    let calculated=helpFactorial(num);
+    if (typeof(calculated)!==typeof(Number)) document.getElementById("res").innerText = calculated;
+    
+    else  document.getElementById("res").innerText = "Factorial: " + calculated;
+    
+}
+  </script>
+</body>
+</html>
