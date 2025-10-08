@@ -1,0 +1,30 @@
+
+function calculateM(y, e) {
+    const g = 9.81;
+    const term1 = g * (y - 5 * Math.sin(y / 4));
+    const term2 = Math.log(Math.abs(x + Math.pow(x, 2)));
+    return term1 + term2;
+}
+
+function calculateX(e) {
+    const x = Math.sqrt(Math.pow(Math.sin(e), 2) + 3.41);
+    return x;
+}
+
+let y = 10;
+let e = Math.PI / 4;
+
+let x = calculateX(e);
+console.log(`Значення x: ${x.toFixed(2)}`);
+
+let m = calculateM(y, e);
+console.log(`Значення m: ${m.toFixed(2)}`);
+
+
+// 2 завдання
+let x = 2;
+let y = 0.2;
+
+let result = (0.5 < y) && (y <= x + Math.sqrt(x));
+
+console.log(result);
